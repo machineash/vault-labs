@@ -1,3 +1,5 @@
 variable "vault_token" {
-    sensitive = true
+  description = "Root token for Vault auth"
+  type        = string
+  sensitive   = true
 }

@@ -20,15 +20,12 @@ data "vault_kv_secret_v2" "myapp" {
 
 # TEMPORARY DEBUG OUTPUT
 # Lets us see the structure Terraform actually receives
-output "debug_secret" {
-  value = data.vault_kv_secret_v2.myapp.data
+#output "debug_secret" {
+ # value = nonsensitive(data.vault_kv_secret_v2.myapp.data)
+#}
+
+
+ output "api_key" {
+  value     = data.vault_kv_secret_v2.myapp.data["ap1_k3y"]
   sensitive = true
 }
-
-
-# FINAL
-# Commented out for now until we can confirm structure
-# output "api_key" {
-  #value     = data.vault_kv_secret_v2.myapp.data["data"]["api_key"]
-  #sensitive = true
-#}

@@ -5,10 +5,6 @@ terraform {
       version = "~> 4.3"
     }
   }
-
-  backend "local" {
-    path = "terraform.tfstate"
-  }
 }
 
 
@@ -22,7 +18,17 @@ data "vault_kv_secret_v2" "myapp" {
   name  = "myapp"
 }
 
-output "api_key" {
-  value     = data.vault_kv_secret_v2.myapp.data["api_key"]
+# TEMPORARY DEBUG OUTPUT
+# Lets us see the structure Terraform actually receives
+output "debug_secret" {
+  value = data.vault_kv_secret_v2.myapp.data
   sensitive = true
 }
+
+
+# FINAL
+# Commented out for now until we can confirm structure
+# output "api_key" {
+  #value     = data.vault_kv_secret_v2.myapp.data["data"]["api_key"]
+  #sensitive = true
+#}

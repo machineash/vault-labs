@@ -31,6 +31,7 @@ Note: Docker can be used and cloud can be integrated. Due to current machine con
 ## Architecture Overview
 Terraform ⇔ Vault flow:
 
+```
 Terraform (Vault Provider)
        |
        | → Authenticate using token
@@ -40,6 +41,7 @@ Terraform (Vault Provider)
        | → Access KV v2 secrets engine
        |
     secret/myapp (api_key)
+```
 
 Key steps in the handshake:
 1. Terraform loads Vault provider
@@ -52,11 +54,13 @@ Key steps in the handshake:
 This mirrors how Terraform interacts with Vault in production, just without HCP Vault or a cloud cluster. 
 
 ## Repository Structure
+```
 .
 ├── main.tf
 ├── variables.tf
 ├── vault.hcl
 ├── README.md
+```
 
 Note: Remember, your vault-data/ directory, Terraform state files, tokens, and unseal keys must be excluded via .gitignore.
 
@@ -92,7 +96,8 @@ terraform apply
 ```
 
 Terraform should output:
-``` Apply complete!
+```
+Apply complete!
 ```
 
 Your secret will appear as a sensitive value, not plaintext. 

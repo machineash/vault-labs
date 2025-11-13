@@ -58,7 +58,6 @@ This mirrors how Terraform interacts with Vault in production, just without HCP 
 .
 ├── main.tf
 ├── variables.tf
-├── vault.hcl
 ├── README.md
 ```
 

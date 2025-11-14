@@ -61,7 +61,7 @@ This mirrors how Terraform interacts with Vault in production, just without HCP 
 ├── README.md
 ```
 
-Note: Remember, your vault-data/ directory, Terraform state files, tokens, and unseal keys must be excluded via .gitignore.
+Note: Certain sensitive data was not pushed to this repo and is listed in .gitignore. If you choose to reproduce this demo, we recommend you do the same.
 
 ## Setup Instructions
 ### 1. Start Persistent Vault

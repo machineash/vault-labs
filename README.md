@@ -24,9 +24,9 @@ This project shows the full authentication flow, persistent Vault storage, KV v2
 - Distinguishing KV v1 vs KV v2 paths
 
 ### Zero-Cost Setup
-Runs fully locally with no Docker Desktop, no cloud bill, and no external dependencies. 
+Runs fully locally with no Docker Desktop, no cloud bill (yet), and no external dependencies. 
 
-Note: Docker can be used and cloud can be integrated. Due to current machine constraints, Docker was not used for this demo.
+Note: Docker can be used and cloud can be integrated. Due to current machine constraints, Docker was not used for this demo. Cloud integration is planned for the next phase.
 
 ## Architecture Overview
 Terraform ⇔ Vault flow:
@@ -185,7 +185,7 @@ This demo reflects the same mental models used in Solutions Engineering:
 
 ## Outcome
 This lab desmontrates that I can:
-- stand up a real Vault cluster,
+- stand up a real Vault server,
 - integrate Terraform securely,
 - debug provider errors end-to-end,
 - think in IaC patterns,
